@@ -1,7 +1,6 @@
 package com.example.programmeringseksambackend.controller;
 
 import com.example.programmeringseksambackend.model.Kandidat;
-import com.example.programmeringseksambackend.model.Parti;
 import com.example.programmeringseksambackend.service.KandidatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

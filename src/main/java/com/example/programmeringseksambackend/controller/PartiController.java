@@ -58,6 +58,7 @@ public class PartiController {
     @GetMapping("/showAllpartier")
     public ResponseEntity<List<Parti>> showAllPartier(){
         List<Parti> partier = partiService.findAllPartier();
+        partiService.voteCount();
         return new ResponseEntity<>(partier, HttpStatus.OK);
     }
 }

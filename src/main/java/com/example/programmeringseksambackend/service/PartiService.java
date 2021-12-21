@@ -49,4 +49,15 @@ public class PartiService {
         return partiRepository.findAll();
     }
 
+    public void voteCount(){
+        List<Parti> partier = partiRepository.findAll();
+        Integer allVotes = 2568;
+        for(int i =0; i < partier.size(); i++){
+            Parti parti = partier.get(i);
+            Double votes = parti.getPartiVotes();
+            Double votePercentage = votes/allVotes*100;
+            parti.setPartiVotePercentage(votePercentage);
+            partiRepository.save(parti);
+        }
+    }
 }

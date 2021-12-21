@@ -1,7 +1,6 @@
 package com.example.programmeringseksambackend.service;
 
 import com.example.programmeringseksambackend.model.Kandidat;
-import com.example.programmeringseksambackend.model.Parti;
 import com.example.programmeringseksambackend.repository.KandidatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,19 +14,19 @@ public class KandidatService {
     private KandidatRepository kandidatRepository;
 
     @Autowired
-    public KandidatService(KandidatRepository kandidatRepository){
+    public KandidatService(KandidatRepository kandidatRepository) {
         this.kandidatRepository = kandidatRepository;
     }
 
-    public Kandidat findById(Integer id){
-        return kandidatRepository.findById(id).orElseThrow(() -> new NoResultException("Kandidat with id: "+ id + " does not exist"));
+    public Kandidat findById(Integer id) {
+        return kandidatRepository.findById(id).orElseThrow(() -> new NoResultException("Kandidat with id: " + id + " does not exist"));
     }
 
-    public List<Kandidat> findAllKandidater(){
+    public List<Kandidat> findAllKandidater() {
         return kandidatRepository.findAll();
     }
 
-    public Kandidat saveKandidat(Kandidat kandidat){
+    public Kandidat saveKandidat(Kandidat kandidat) {
         return kandidatRepository.save(kandidat);
     }
 
@@ -38,8 +37,7 @@ public class KandidatService {
         return kandidatRepository.save(kandidatData);
     }
 
-    public void deleteKandidat(Integer id){
+    public void deleteKandidat(Integer id) {
         kandidatRepository.deleteById(id);
     }
-
 }

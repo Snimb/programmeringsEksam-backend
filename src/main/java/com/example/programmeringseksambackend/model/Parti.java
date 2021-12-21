@@ -1,7 +1,5 @@
 package com.example.programmeringseksambackend.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -27,6 +25,12 @@ public class Parti {
 
     @Column(name = "parti_name")
     private String partiName;
+
+    @Column(name = "parti_votes")
+    private Double partiVotes;
+
+    @Column(name = "parti_vote_percentage")
+    private Double partiVotePercentage;
 
     @OneToMany(orphanRemoval = true)
     @JoinColumn(name = "parti_id")

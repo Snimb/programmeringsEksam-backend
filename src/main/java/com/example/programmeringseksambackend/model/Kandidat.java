@@ -23,9 +23,8 @@ public class Kandidat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer kandidatID;
 
+    @Column(name = "kandidat_name")
     private String kandidatName;
-
-    private Long kandidatVotes;
 
     @ManyToOne
     @JoinColumn(name = "parti_id")
